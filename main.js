@@ -1,0 +1,136 @@
+// ===== 共通の動き =====
+document.addEventListener('DOMContentLoaded', () => {
+  // ハンバーガーメニュー（スマホ）
+  const btn = document.querySelector('.menu-btn');
+  const nav = document.querySelector('.nav');
+  if (btn && nav) {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+  }
+
+  // 写真の拡大表示（ライトボックス）
+  const zoomables = [...document.querySelectorAll('[data-zoom]')];
+  if (zoomables.length) {
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.innerHTML = '<button class="lb-close" aria-label="閉じる">×</button>' +
+      '<button class="lb-prev" aria-label="前の写真">‹</button>' +
+      '<img alt=""><div class="caption"></div>' +
+      '<button class="lb-next" aria-label="次の写真">›</button>';
+    document.body.appendChild(lb);
+    const img = lb.querySelector('img');
+    const cap = lb.querySelector('.caption');
+    let idx = 0;
+    const show = (i) => {
+      idx = (i + zoomables.length) % zoomables.length;
+      const el = zoomables[idx];
+      const src = el.dataset.zoom || el.src;
+      img.src = src;
+      img.alt = el.alt || '';
+      cap.textContent = el.dataset.caption || el.alt || '';
+      lb.classList.add('show');
+    };
+    zoomables.forEach((el, i) => el.addEventListener('click', () => show(i)));
+    lb.querySelector('.lb-close').addEventListener('click', () => lb.classList.remove('show'));
+    lb.querySelector('.lb-prev').addEventListener('click', (e) => { e.stopPropagation(); show(idx - 1); });
+    lb.querySelector('.lb-next').addEventListener('click', (e) => { e.stopPropagation(); show(idx + 1); });
+    lb.addEventListener('click', (e) => { if (e.target === lb) lb.classList.remove('show'); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('show')) return;
+      if (e.key === 'Escape') lb.classList.remove('show');
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  }
+
+  // メニューのカテゴリ絞り込み
+  document.querySelectorAll('.filter').forEach((f) => {
+    const target = document.querySelector(f.dataset.target);
+    f.querySelectorAll('button').forEach((b) => {
+      b.addEventListener('click', () => {
+        f.querySelectorAll('button').forEach((x) => x.classList.remove('active'));
+        b.classList.add('active');
+        const cat = b.dataset.cat;
+        target.querySelectorAll('.menu-item').forEach((item) => {
+          item.classList.toggle('hide', cat !== 'all' && item.dataset.cat !== cat);
+        });
+      });
+    });
+  });
+
+  // 営業中かどうかを自動表示（data-open="11:00-20:00" data-closed-days="2" 0=日曜）
+  document.querySelectorAll('[data-open]').forEach((el) => {
+    const [s, e] = el.dataset.open.split('-');
+    const toMin = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+    const now = new Date();
+    const cur = now.getHours() * 60 + now.getMinutes();
+    const closedDays = (el.dataset.closedDays || '').split(',').filter(Boolean).map(Number);
+    let start = toMin(s), end = toMin(e);
+    let open;
+    if (end <= start) { open = cur >= start || cur < end; } else { open = cur >= start && cur < end; }
+    if (closedDays.includes(now.getDay())) open = false;
+    el.textContent = open ? 'ただいま営業中' : '営業時間外';
+    el.classList.add(open ? 'open' : 'closed');
+  });
+
+  // トップへ戻るボタン
+  const toTop = document.createElement('button');
+  toTop.className = 'to-top';
+  toTop.setAttribute('aria-label', 'ページの先頭へ');
+  toTop.textContent = '↑';
+  document.body.appendChild(toTop);
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 400));
+
+  // スクロールでふわっと表示
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach((el) => io.observe(el));
+
+  // お問い合わせフォーム（サンプルなので送信はしない）
+  document.querySelectorAll('.contact-form').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('サンプルサイトのため送信は行われません。実際の制作では、メール送信やGoogleフォーム連携などに対応します。');
+    });
+  });
+
+  // タブ切り替え
+  document.querySelectorAll('[data-tabs]').forEach((wrap) => {
+    const btns = wrap.querySelectorAll('.tabs button');
+    const panels = wrap.querySelectorAll('.tab-panel');
+    btns.forEach((b, i) => b.addEventListener('click', () => {
+      btns.forEach((x) => x.classList.remove('active'));
+      panels.forEach((x) => x.classList.remove('active'));
+      b.classList.add('active');
+      panels[i].classList.add('active');
+    }));
+  });
+
+  // スライドショー
+  document.querySelectorAll('.slider').forEach((sl) => {
+    const imgs = sl.querySelectorAll('img');
+    let i = 0;
+    setInterval(() => {
+      imgs[i].classList.remove('active');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('active');
+    }, 3000);
+  });
+
+  // 注文数の計算デモ
+  document.querySelectorAll('.counter').forEach((c) => {
+    const price = Number(c.dataset.price);
+    const qty = c.querySelector('.qty');
+    const total = c.querySelector('.total');
+    let n = 1;
+    const render = () => { qty.textContent = n; total.textContent = '合計 ' + (price * n).toLocaleString() + '円（税込）'; };
+    c.querySelector('.minus').addEventListener('click', () => { if (n > 1) n--; render(); });
+    c.querySelector('.plus').addEventListener('click', () => { if (n < 20) n++; render(); });
+    render();
+  });
+});
