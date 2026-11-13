@@ -61,16 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 営業中かどうかを自動表示（data-open="11:00-20:00" data-closed-days="2" 0=日曜）
+  // 営業中かどうかを自動表示
+  // data-open="11:30-14:30,17:30-22:00"（休憩ありは「,」区切り） data-closed-days="1"（0=日曜〜6=土曜）
+  // ※決まった営業時間・定休日にだけ対応。臨時休業や祝日は自動では反映されません。
   document.querySelectorAll('[data-open]').forEach((el) => {
-    const [s, e] = el.dataset.open.split('-');
     const toMin = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
     const now = new Date();
     const cur = now.getHours() * 60 + now.getMinutes();
     const closedDays = (el.dataset.closedDays || '').split(',').filter(Boolean).map(Number);
-    let start = toMin(s), end = toMin(e);
-    let open;
-    if (end <= start) { open = cur >= start || cur < end; } else { open = cur >= start && cur < end; }
+    let open = el.dataset.open.split(',').some((range) => {
+      const [s, e] = range.trim().split('-');
+      const start = toMin(s), end = toMin(e);
+      return end <= start ? (cur >= start || cur < end) : (cur >= start && cur < end);
+    });
     if (closedDays.includes(now.getDay())) open = false;
     el.textContent = open ? 'ただいま営業中' : '営業時間外';
     el.classList.add(open ? 'open' : 'closed');
@@ -91,11 +94,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach((el) => io.observe(el));
 
-  // お問い合わせフォーム（サンプルなので送信はしない）
+  // お問い合わせフォーム（サンプルなので実際の送信はせず、届くメールの例を表示）
   document.querySelectorAll('.contact-form').forEach((form) => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('サンプルサイトのため送信は行われません。実際の制作では、メール送信やGoogleフォーム連携などに対応します。');
+      const shop = document.querySelector('.logo').textContent.trim();
+      const val = (id) => (form.querySelector('#' + id)?.value || '').trim();
+      const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      const box = form.nextElementSibling;
+      box.innerHTML =
+        '<h3>送信が完了しました（サンプル）</h3>' +
+        '<p>実際のサイトでは、次の2通のメールが自動で送られます。</p>' +
+        '<div class="mail"><div class="mail-head">① お店に届くメール（宛先：info@〇〇〇.jp）</div>' +
+        '件名：【' + esc(shop) + '】ご予約・お問い合わせがありました<br>' +
+        'お名前：' + esc(val('name')) + '<br>メール：' + esc(val('email')) + '<br>電話：' + esc(val('tel')) +
+        '<br>ご用件：' + esc(val('kind')) + '<br>内容：' + esc(val('msg')).replace(/\n/g, '<br>') + '</div>' +
+        '<div class="mail"><div class="mail-head">② お客様に届く自動返信メール（宛先：' + esc(val('email')) + '）</div>' +
+        '件名：【' + esc(shop) + '】お問い合わせを受け付けました<br>' +
+        esc(val('name')) + ' 様<br>このたびはご連絡ありがとうございます。内容を確認のうえ、お店からご連絡いたします。</div>' +
+        '<button class="btn outline" type="button">フォームに戻る</button>';
+      form.hidden = true;
+      box.hidden = false;
+      box.querySelector('button').addEventListener('click', () => { box.hidden = true; form.hidden = false; });
     });
   });
 
