@@ -6,6 +6,7 @@
 <title>炭火酒場 灯｜居酒屋のサンプル</title>
 <meta name="description" content="居酒屋のホームページ制作サンプルです。">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "炭火酒場 灯", "servesCuisine": "居酒屋・焼き鳥", "address": "〇〇県〇〇市あかり横丁4-5-6（架空）", "telephone": "000-000-0000", "openingHours": ["Mo,Tu,We,Th,Fr,Sa 17:00-24:00"], "url": "https://betanamin.github.io/portfolio-site/izakaya.html"}</script>
 </head>
 <body class="izakaya">
 <header class="site-header">
@@ -67,14 +68,34 @@
     </div>
   </div>
 </section>
+<section id="news" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">お知らせ</h2>
+    <ul class="news-list fade-in"><li><time>2026.11.12</time><span class="tag">宴会</span>忘年会コースのご予約を受付中です。</li><li><time>2026.11.05</time><span class="tag">お知らせ</span>年末年始は12月31日〜1月3日までお休みします。</li><li><time>2026.10.28</time><span class="tag">新メニュー</span>季節のおでんが登場しました。</li></ul>
+  </div>
+</section>
+<section id="coupon" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">クーポン</h2>
+    <p class="section-lead">ご来店時にスマホの画面を見せるだけで使えます。</p>
+    <div class="coupon-grid"><div class="coupon fade-in"><div class="coupon-title">飲み放題 500円引き</div><div class="coupon-cond">提示条件：4名様以上・コースご予約の方</div><div class="coupon-date">有効期限：2026年12月31日まで</div></div><div class="coupon fade-in"><div class="coupon-title">乾杯ドリンク1杯サービス</div><div class="coupon-cond">提示条件：ご来店時にこの画面をご提示ください</div><div class="coupon-date">有効期限：2026年11月30日まで</div></div></div>
+  </div>
+</section>
+<section id="courses" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">コース</h2>
+    <div class="course-grid"><div class="course fade-in"><h3>焼き鳥満喫コース</h3><p>全8品・2時間飲み放題つき</p><div class="course-meta"><span class="price">4,000円（税込）</span><span>2名〜</span></div><a class="btn course-btn" href="#contact" data-course="焼き鳥満喫コース">このコースで予約</a></div><div class="course fade-in"><h3>灯の宴会コース</h3><p>全10品・2.5時間飲み放題つき</p><div class="course-meta"><span class="price">5,000円（税込）</span><span>4名〜</span></div><a class="btn course-btn" href="#contact" data-course="灯の宴会コース">このコースで予約</a></div></div>
+  </div>
+</section>
 <section id="access">
   <div class="container">
     <h2 class="section-title">店舗情報</h2>
     <div class="shop-info">
   <div>
     <p><strong>営業状況</strong><span class="open-status" data-open="17:00-24:00" data-closed-days="0"></span></p>
+    <ul class="equip"><li>個室あり</li><li>座敷あり</li><li>飲み放題あり</li><li>貸切可（20名まで）</li><li>カード可</li><li>店内禁煙</li></ul>
     <p class="auto-note">※営業中の表示は、決まった営業時間・定休日をもとに自動で切り替えています。臨時休業・祝日・年末年始などは自動では反映されないため、お知らせ欄などで別途ご案内します。</p>
-    <table><tr><th>住所</th><td>〇〇県〇〇市あかり横丁4-5-6（架空）</td></tr><tr><th>営業時間</th><td>17:00〜24:00</td></tr><tr><th>定休日</th><td>日曜日</td></tr><tr><th>席数</th><td>カウンター8席・座敷24席</td></tr><tr><th>電話</th><td>000-000-0000</td></tr></table>
+    <table><tr><th>住所</th><td>〇〇県〇〇市あかり横丁4-5-6（架空）</td></tr><tr><th>営業時間</th><td>17:00〜24:00</td></tr><tr><th>定休日</th><td>日曜日</td></tr><tr><th>席数</th><td>カウンター8席・座敷24席</td></tr><tr><th>電話</th><td><a href="tel:0000000000">000-000-0000</a>（タップで発信）</td></tr><tr><th>支払い方法</th><td>現金・クレジットカード・電子マネー</td></tr><tr><th>禁煙・喫煙</th><td>店内禁煙（店外に喫煙スペースあり）</td></tr><tr><th>駐車場</th><td>なし</td></tr></table>
   </div>
   <div class="map-box"><iframe src="https://maps.google.com/maps?q=Shinjuku%20Station&z=15&output=embed" loading="lazy" title="地図"></iframe></div>
 </div>
@@ -83,7 +104,13 @@
 <section id="contact" style="padding-top:0">
   <div class="container">
     <h2 class="section-title">ご予約</h2>
-    <p class="section-lead">当日のご予約はお電話でお願いします。</p>
+    <p class="section-lead">当日のご予約はお電話でも承ります。</p>
+    <div class="rsv-box">
+  <strong>空席カレンダー</strong>
+  <p class="small-note">○＝空きあり　△＝残りわずか　×＝満席・定休日。日付を押すと、下のフォームのご希望日に入ります。当日のネット予約は15:00まで受け付けます。</p>
+  <div class="rsv-calendar" data-closed-days="0"></div>
+  <p class="auto-note">※空席の表示はサンプルです。実際は予約システムの空き状況と連動させます。</p>
+</div>
     <div class="flow-box">
   <strong>送信後の流れ</strong>
   <ol class="flow">
@@ -98,6 +125,8 @@
   <div><label for="name">お名前</label><input id="name" required placeholder="例）山田 太郎"></div>
   <div><label for="email">メールアドレス</label><input id="email" type="email" required placeholder="例）sample@example.com"></div>
   <div><label for="tel">電話番号</label><input id="tel" type="tel" placeholder="例）090-0000-0000"></div>
+  <div><label for="date">ご希望日</label><input id="date" type="date"></div>
+  <div><label for="people">人数</label><select id="people"><option>1名</option><option selected>2名</option><option>3名</option><option>4名</option><option>5〜9名</option><option>10名以上</option></select></div>
   <div><label for="kind">ご用件</label><select id="kind"><option>ご予約</option><option>貸切のご相談</option><option>その他</option></select></div>
   <div><label for="msg">内容</label><textarea id="msg" rows="4" placeholder="ご希望の日時・人数など"></textarea></div>
   <p class="small-note">送信いただいた個人情報は、ご予約・お問い合わせへの対応にのみ利用します（<a href="legal.html#privacy">プライバシーポリシー</a>）。</p>
@@ -112,7 +141,8 @@
     <div class="footer-info">
       <p>運営：株式会社〇〇〇〇（仮）｜〒000-0000 〇〇県〇〇市〇〇1-2-3（仮）｜TEL 000-000-0000</p>
       <nav class="footer-legal"><a href="legal.html#privacy">プライバシーポリシー</a><a href="legal.html#tokushoho">特定商取引法に基づく表記</a></nav>
-      <p class="footer-small">※会社名・住所・各種表記は仮のものです。実際の制作では、お店の正式な情報に差し替えます。</p>
+      <nav class="footer-sns"><a href="#">Instagram</a><a href="#">LINE公式アカウント</a></nav>
+      <p class="footer-small">※会社名・住所・各種表記・SNSのリンク先は仮のものです。実際の制作では、お店の正式な情報に差し替えます。</p>
     </div>
     <p>※このサイトは制作サンプルです。掲載している店舗・メニュー・住所はすべて架空のものです。</p>
     <p>写真：<a href="https://www.pexels.com/ja-jp/" target="_blank" rel="noopener">Pexels</a>（無料素材）</p>
