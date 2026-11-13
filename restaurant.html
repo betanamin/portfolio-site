@@ -6,6 +6,7 @@
 <title>Trattoria Sole｜レストランのサンプル</title>
 <meta name="description" content="レストランのホームページ制作サンプルです。">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "Trattoria Sole", "servesCuisine": "イタリア料理", "address": "〇〇県〇〇市ソーレ通り7-8-9（架空）", "telephone": "000-000-0000", "openingHours": ["Tu,We,Th,Fr,Sa,Su 11:30-14:30", "Tu,We,Th,Fr,Sa,Su 17:30-22:00"], "url": "https://betanamin.github.io/portfolio-site/restaurant.html"}</script>
 </head>
 <body class="restaurant">
 <header class="site-header">
@@ -61,14 +62,27 @@
     </div>
   </div>
 </section>
+<section id="news" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">お知らせ</h2>
+    <ul class="news-list fade-in"><li><time>2026.11.08</time><span class="tag">コース</span>クリスマスディナーコースのご予約を受付中です。</li><li><time>2026.11.01</time><span class="tag">お知らせ</span>ランチの最終入店は14:00となります。</li><li><time>2026.10.15</time><span class="tag">新メニュー</span>秋のきのこパスタをご用意しました。</li></ul>
+  </div>
+</section>
+<section id="courses" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">コース</h2>
+    <div class="course-grid"><div class="course fade-in"><h3>ランチコース</h3><p>前菜・パスタ・デザート・ドリンクの全4品</p><div class="course-meta"><span class="price">2,800円（税込）</span><span>1名〜</span></div><a class="btn course-btn" href="#contact" data-course="ランチコース">このコースで予約</a></div><div class="course fade-in"><h3>ディナーコース</h3><p>前菜からデザートまで全6品</p><div class="course-meta"><span class="price">5,500円（税込）</span><span>2名〜</span></div><a class="btn course-btn" href="#contact" data-course="ディナーコース">このコースで予約</a></div></div>
+  </div>
+</section>
 <section id="access">
   <div class="container">
     <h2 class="section-title">店舗情報</h2>
     <div class="shop-info">
   <div>
     <p><strong>営業状況</strong><span class="open-status" data-open="11:30-14:30,17:30-22:00" data-closed-days="1"></span></p>
+    <ul class="equip"><li>個室あり</li><li>記念日プレート</li><li>ワイン豊富</li><li>駐車場あり</li><li>カード可</li><li>全席禁煙</li></ul>
     <p class="auto-note">※営業中の表示は、決まった営業時間・定休日をもとに自動で切り替えています。臨時休業・祝日・年末年始などは自動では反映されないため、お知らせ欄などで別途ご案内します。</p>
-    <table><tr><th>住所</th><td>〇〇県〇〇市ソーレ通り7-8-9（架空）</td></tr><tr><th>営業時間</th><td>ランチ 11:30〜14:30／ディナー 17:30〜22:00</td></tr><tr><th>定休日</th><td>月曜日</td></tr><tr><th>席数</th><td>32席・個室あり</td></tr><tr><th>電話</th><td>000-000-0000</td></tr></table>
+    <table><tr><th>住所</th><td>〇〇県〇〇市ソーレ通り7-8-9（架空）</td></tr><tr><th>営業時間</th><td>ランチ 11:30〜14:30／ディナー 17:30〜22:00</td></tr><tr><th>定休日</th><td>月曜日</td></tr><tr><th>席数</th><td>32席・個室あり</td></tr><tr><th>電話</th><td><a href="tel:0000000000">000-000-0000</a>（タップで発信）</td></tr><tr><th>支払い方法</th><td>現金・クレジットカード</td></tr><tr><th>禁煙・喫煙</th><td>全席禁煙</td></tr><tr><th>駐車場</th><td>3台あり（無料）</td></tr></table>
   </div>
   <div class="map-box"><iframe src="https://maps.google.com/maps?q=Ginza%20Station&z=15&output=embed" loading="lazy" title="地図"></iframe></div>
 </div>
@@ -77,6 +91,12 @@
 <section id="contact" style="padding-top:0">
   <div class="container">
     <h2 class="section-title">ご予約</h2>
+    <div class="rsv-box">
+  <strong>空席カレンダー</strong>
+  <p class="small-note">○＝空きあり　△＝残りわずか　×＝満席・定休日。日付を押すと、下のフォームのご希望日に入ります。当日のネット予約は15:00まで受け付けます。</p>
+  <div class="rsv-calendar" data-closed-days="1"></div>
+  <p class="auto-note">※空席の表示はサンプルです。実際は予約システムの空き状況と連動させます。</p>
+</div>
     <div class="flow-box">
   <strong>送信後の流れ</strong>
   <ol class="flow">
@@ -91,6 +111,8 @@
   <div><label for="name">お名前</label><input id="name" required placeholder="例）山田 太郎"></div>
   <div><label for="email">メールアドレス</label><input id="email" type="email" required placeholder="例）sample@example.com"></div>
   <div><label for="tel">電話番号</label><input id="tel" type="tel" placeholder="例）090-0000-0000"></div>
+  <div><label for="date">ご希望日</label><input id="date" type="date"></div>
+  <div><label for="people">人数</label><select id="people"><option>1名</option><option selected>2名</option><option>3名</option><option>4名</option><option>5〜9名</option><option>10名以上</option></select></div>
   <div><label for="kind">ご用件</label><select id="kind"><option>ご予約</option><option>貸切のご相談</option><option>その他</option></select></div>
   <div><label for="msg">内容</label><textarea id="msg" rows="4" placeholder="ご希望の日時・人数など"></textarea></div>
   <p class="small-note">送信いただいた個人情報は、ご予約・お問い合わせへの対応にのみ利用します（<a href="legal.html#privacy">プライバシーポリシー</a>）。</p>
@@ -105,7 +127,8 @@
     <div class="footer-info">
       <p>運営：株式会社〇〇〇〇（仮）｜〒000-0000 〇〇県〇〇市〇〇1-2-3（仮）｜TEL 000-000-0000</p>
       <nav class="footer-legal"><a href="legal.html#privacy">プライバシーポリシー</a><a href="legal.html#tokushoho">特定商取引法に基づく表記</a></nav>
-      <p class="footer-small">※会社名・住所・各種表記は仮のものです。実際の制作では、お店の正式な情報に差し替えます。</p>
+      <nav class="footer-sns"><a href="#">Instagram</a><a href="#">LINE公式アカウント</a></nav>
+      <p class="footer-small">※会社名・住所・各種表記・SNSのリンク先は仮のものです。実際の制作では、お店の正式な情報に差し替えます。</p>
     </div>
     <p>※このサイトは制作サンプルです。掲載している店舗・メニュー・住所はすべて架空のものです。</p>
     <p>写真：<a href="https://www.pexels.com/ja-jp/" target="_blank" rel="noopener">Pexels</a>（無料素材）</p>
