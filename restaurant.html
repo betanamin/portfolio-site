@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trattoria Sole｜レストランのサンプル</title>
+<meta name="description" content="レストランのホームページ制作サンプルです。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="restaurant">
+<header class="site-header">
+  <div class="container inner">
+    <a class="logo" href="index.html">Trattoria Sole</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav"><li><a href="index.html">トップ</a></li><li><a href="cafe.html">カフェ</a></li><li><a href="izakaya.html">居酒屋</a></li><li><a href="restaurant.html" aria-current="page">レストラン</a></li><li><a href="features.html">できること</a></li></ul>
+  </div>
+</header>
+<section class="hero" style="background-image:url('https://images.pexels.com/photos/18981717/pexels-photo-18981717.jpeg?auto=compress&cs=tinysrgb&w=1800')">
+  <div class="container">
+    <h1>Trattoria Sole</h1>
+    <p>記念日にも、いつもの夕食にも。旬の食材でつくるイタリア料理のお店です。</p>
+    <a class="btn" href="#contact">ご予約はこちら</a>
+  </div>
+</section>
+<section id="course">
+  <div class="container">
+    <h2 class="section-title">おすすめ</h2>
+    <p class="section-lead">シェフおまかせのコースと、アラカルト。写真を押すと拡大します。</p>
+    <div class="filter" data-target="#re-menu"><button class="active" data-cat="all">すべて</button><button data-cat="course">コース</button><button data-cat="main">メイン</button><button data-cat="starter">前菜</button></div>
+    <div class="menu-grid" id="re-menu"><div class="menu-item fade-in" data-cat="main">
+  <div class="photo"><span class="menu-no">01</span>
+    <img src="https://images.pexels.com/photos/31094836/pexels-photo-31094836.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/31094836/pexels-photo-31094836.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.01 自家製手打ちパスタ　1,600円" alt="自家製手打ちパスタ" loading="lazy"></div>
+  <div class="body"><h3>自家製手打ちパスタ</h3><div class="price">1,600円</div><p class="desc">もちもちの生パスタをクリームソースで。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="main">
+  <div class="photo"><span class="menu-no">02</span>
+    <img src="https://images.pexels.com/photos/3053082/pexels-photo-3053082.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/3053082/pexels-photo-3053082.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.02 マルゲリータ　1,400円" alt="マルゲリータ" loading="lazy"></div>
+  <div class="body"><h3>マルゲリータ</h3><div class="price">1,400円</div><p class="desc">薪窯で焼き上げる定番のピッツァ。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="starter">
+  <div class="photo"><span class="menu-no">03</span>
+    <img src="https://images.pexels.com/photos/38173034/pexels-photo-38173034.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/38173034/pexels-photo-38173034.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.03 彩り野菜のサラダ　900円" alt="彩り野菜のサラダ" loading="lazy"></div>
+  <div class="body"><h3>彩り野菜のサラダ</h3><div class="price">900円</div><p class="desc">契約農家の新鮮野菜をたっぷりと。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="course">
+  <div class="photo"><span class="menu-no">04</span>
+    <img src="https://images.pexels.com/photos/18981717/pexels-photo-18981717.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/18981717/pexels-photo-18981717.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.04 ディナーコース　5,500円" alt="ディナーコース" loading="lazy"></div>
+  <div class="body"><h3>ディナーコース</h3><div class="price">5,500円</div><p class="desc">前菜からデザートまで全6品。</p></div>
+</div></div>
+  </div>
+</section>
+<section id="gallery" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">店内の様子</h2>
+    <p class="section-lead">写真を押すと大きく表示され、矢印で切り替えられます。</p>
+    <div class="gallery fade-in">
+      <img src="https://images.pexels.com/photos/32477661/pexels-photo-32477661.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" data-zoom="https://images.pexels.com/photos/32477661/pexels-photo-32477661.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="店内のテーブル席" loading="lazy">
+      <img src="https://images.pexels.com/photos/18981717/pexels-photo-18981717.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" data-zoom="https://images.pexels.com/photos/18981717/pexels-photo-18981717.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="ワインとディナー" loading="lazy">
+      <img src="https://images.pexels.com/photos/3053082/pexels-photo-3053082.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" data-zoom="https://images.pexels.com/photos/3053082/pexels-photo-3053082.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="焼きたてのピッツァ" loading="lazy">
+      <img src="https://images.pexels.com/photos/31094836/pexels-photo-31094836.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" data-zoom="https://images.pexels.com/photos/31094836/pexels-photo-31094836.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="手打ちパスタ" loading="lazy">
+    </div>
+  </div>
+</section>
+<section id="access">
+  <div class="container">
+    <h2 class="section-title">店舗情報</h2>
+    <div class="shop-info">
+  <div>
+    <p><strong>営業状況</strong><span class="open-status" data-open="11:30-22:00" data-closed-days="1"></span></p>
+    <table><tr><th>住所</th><td>〇〇県〇〇市ソーレ通り7-8-9（架空）</td></tr><tr><th>営業時間</th><td>ランチ 11:30〜14:30／ディナー 17:30〜22:00</td></tr><tr><th>定休日</th><td>月曜日</td></tr><tr><th>席数</th><td>32席・個室あり</td></tr><tr><th>電話</th><td>000-000-0000</td></tr></table>
+  </div>
+  <div class="map-box"><iframe src="https://maps.google.com/maps?q=Ginza%20Station&z=15&output=embed" loading="lazy" title="地図"></iframe></div>
+</div>
+  </div>
+</section>
+<section id="contact" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">ご予約</h2>
+    <form class="contact-form">
+  <div><label for="name">お名前</label><input id="name" required placeholder="例）山田 太郎"></div>
+  <div><label for="tel">電話番号</label><input id="tel" type="tel" placeholder="例）090-0000-0000"></div>
+  <div><label for="kind">ご用件</label><select id="kind"><option>ご予約</option><option>貸切のご相談</option><option>その他</option></select></div>
+  <div><label for="msg">内容</label><textarea id="msg" rows="4" placeholder="ご希望の日時・人数など"></textarea></div>
+  <button class="btn" type="submit">送信する</button>
+</form>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav"><a href="index.html">トップ</a><a href="cafe.html">カフェ</a><a href="izakaya.html">居酒屋</a><a href="restaurant.html">レストラン</a><a href="features.html">できること</a></nav>
+    <p>※このサイトは制作サンプルです。掲載している店舗・メニュー・住所はすべて架空のものです。</p>
+    <p>写真：<a href="https://www.pexels.com/ja-jp/" target="_blank" rel="noopener">Pexels</a>（無料素材）</p>
+    <p>&copy; 2026 飲食店ホームページ制作サンプル</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
