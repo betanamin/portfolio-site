@@ -173,6 +173,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(bar);
   }
 
+  // ほかの送信方法：メールアプリ（mailto）と予約サイト（サンプル）
+  document.querySelectorAll('.mailto-btn').forEach((a) => {
+    a.addEventListener('click', () => {
+      const v = (id) => (document.querySelector('#' + id)?.value || '').trim();
+      const shop = document.querySelector('.logo').textContent.trim();
+      const body = 'お名前：' + v('name') + '\nメール：' + v('email') + '\n電話：' + v('tel') + '\nご希望日：' + v('date') + '\n人数：' + v('people') + '\nご用件：' + v('kind') + '\n内容：' + v('msg');
+      a.href = 'mailto:info@example.com?subject=' + encodeURIComponent('【' + shop + '】ご予約・お問い合わせ') + '&body=' + encodeURIComponent(body);
+    });
+  });
+  document.querySelectorAll('.rsv-site-btn').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('サンプルのため移動しません。実際は、お店が契約している予約サイト（空席確認・ネット予約のページ）に移動します。');
+    });
+  });
+
   // タブ切り替え
   document.querySelectorAll('[data-tabs]').forEach((wrap) => {
     const btns = wrap.querySelectorAll('.tabs button');
