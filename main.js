@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '<div class="mail"><div class="mail-head">① お店に届くメール（宛先：info@〇〇〇.jp）</div>' +
         '件名：【' + esc(shop) + '】ご予約・お問い合わせがありました<br>' +
         'お名前：' + esc(val('name')) + '<br>メール：' + esc(val('email')) + '<br>電話：' + esc(val('tel')) +
+        '<br>ご希望日：' + esc(val('date')) + '　人数：' + esc(val('people')) +
         '<br>ご用件：' + esc(val('kind')) + '<br>内容：' + esc(val('msg')).replace(/\n/g, '<br>') + '</div>' +
         '<div class="mail"><div class="mail-head">② お客様に届く自動返信メール（宛先：' + esc(val('email')) + '）</div>' +
         '件名：【' + esc(shop) + '】お問い合わせを受け付けました<br>' +
@@ -118,6 +119,59 @@ document.addEventListener('DOMContentLoaded', () => {
       box.querySelector('button').addEventListener('click', () => { box.hidden = true; form.hidden = false; });
     });
   });
+
+  // 空席カレンダー（サンプル：日付から決まった○△×を表示）
+  document.querySelectorAll('.rsv-calendar').forEach((cal) => {
+    const closed = (cal.dataset.closedDays || '').split(',').filter(Boolean).map(Number);
+    const week = ['日', '月', '火', '水', '木', '金', '土'];
+    const today = new Date();
+    for (let i = 0; i < 14; i++) {
+      const d = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
+      let mark = ['○', '○', '△', '○', '×', '○', '△'][(d.getDate() * 3 + d.getMonth()) % 7];
+      if (closed.includes(d.getDay())) mark = '×';
+      if (i === 0 && today.getHours() >= 15) mark = '×';
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cal-day' + (mark === '×' ? ' full' : '') + (d.getDay() === 0 ? ' sun' : '') + (d.getDay() === 6 ? ' sat' : '');
+      b.innerHTML = '<span>' + (d.getMonth() + 1) + '/' + d.getDate() + '（' + week[d.getDay()] + '）</span><b>' + mark + '</b>';
+      if (mark === '×') b.disabled = true;
+      const iso = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      b.addEventListener('click', () => {
+        const date = document.querySelector('#date');
+        if (date) { date.value = iso; date.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        cal.querySelectorAll('.cal-day').forEach((x) => x.classList.remove('picked'));
+        b.classList.add('picked');
+      });
+      cal.appendChild(b);
+    }
+  });
+
+  // 「このコースで予約」を押すとフォームにコース名を入れる
+  document.querySelectorAll('.course-btn').forEach((b) => {
+    b.addEventListener('click', () => {
+      const msg = document.querySelector('#msg');
+      if (msg) msg.value = '【コース】' + b.dataset.course + 'を希望します。\n' + msg.value.replace(/^【コース】.*\n/, '');
+    });
+  });
+
+  // 日本語／英語の切り替え
+  document.querySelectorAll('.lang-demo').forEach((demo) => {
+    demo.querySelectorAll('.lang-switch button').forEach((b) => {
+      b.addEventListener('click', () => {
+        demo.querySelectorAll('.lang-switch button').forEach((x) => x.classList.remove('active'));
+        b.classList.add('active');
+        demo.querySelectorAll('[data-ja]').forEach((el) => { el.textContent = el.dataset[b.dataset.lang]; });
+      });
+    });
+  });
+
+  // スマホ下部の「電話する」「ネット予約」ボタン（店舗ページのみ）
+  if (document.body.matches('.cafe, .izakaya, .restaurant')) {
+    const bar = document.createElement('div');
+    bar.className = 'cta-bar';
+    bar.innerHTML = '<a class="btn" href="tel:0000000000">電話する</a><a class="btn" href="#contact">ネット予約</a>';
+    document.body.appendChild(bar);
+  }
 
   // タブ切り替え
   document.querySelectorAll('[data-tabs]').forEach((wrap) => {
