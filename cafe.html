@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafe こもれび｜カフェのサンプル</title>
+<meta name="description" content="カフェのホームページ制作サンプルです。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="cafe">
+<header class="site-header">
+  <div class="container inner">
+    <a class="logo" href="index.html">Cafe こもれび</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav"><li><a href="index.html">トップ</a></li><li><a href="cafe.html" aria-current="page">カフェ</a></li><li><a href="izakaya.html">居酒屋</a></li><li><a href="restaurant.html">レストラン</a></li><li><a href="features.html">できること</a></li></ul>
+  </div>
+</header>
+<section class="hero" style="background-image:url('https://images.pexels.com/photos/18225475/pexels-photo-18225475.jpeg?auto=compress&cs=tinysrgb&w=1800')">
+  <div class="container">
+    <h1>Cafe こもれび</h1>
+    <p>木漏れ日の入る小さなカフェ。ていねいに添れたコーヒーと、手づくりのおやつでひと休み。</p>
+    <a class="btn" href="#menu">メニューを見る</a>
+  </div>
+</section>
+<section id="concept">
+  <div class="container fade-in">
+    <h2 class="section-title">こだわり</h2>
+    <p class="section-lead">豆は毎朝その日の分だけ焙煎。ケーキとパンもすべて店内で手づくりしています。</p>
+  </div>
+</section>
+<section id="menu" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">メニュー</h2>
+    <p class="section-lead">写真を押すと大きく表示されます。</p>
+    <div class="filter" data-target="#cafe-menu"><button class="active" data-cat="all">すべて</button><button data-cat="drink">ドリンク</button><button data-cat="sweets">スイーツ</button><button data-cat="food">フード</button></div>
+    <div class="menu-grid" id="cafe-menu"><div class="menu-item fade-in" data-cat="drink">
+  <div class="photo"><span class="menu-no">01</span>
+    <img src="https://images.pexels.com/photos/6205784/pexels-photo-6205784.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/6205784/pexels-photo-6205784.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.01 カフェラテ　580円" alt="カフェラテ" loading="lazy"></div>
+  <div class="body"><h3>カフェラテ</h3><div class="price">580円</div><p class="desc">ふんわりミルクのラテアート。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="drink">
+  <div class="photo"><span class="menu-no">02</span>
+    <img src="https://images.pexels.com/photos/37455670/pexels-photo-37455670.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/37455670/pexels-photo-37455670.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.02 ハニーラテ　620円" alt="ハニーラテ" loading="lazy"></div>
+  <div class="body"><h3>ハニーラテ</h3><div class="price">620円</div><p class="desc">国産はちみつを使ったやさしい甘さ。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="sweets">
+  <div class="photo"><span class="menu-no">03</span>
+    <img src="https://images.pexels.com/photos/31042721/pexels-photo-31042721.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/31042721/pexels-photo-31042721.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.03 ふわふわパンケーキ　980円" alt="ふわふわパンケーキ" loading="lazy"></div>
+  <div class="body"><h3>ふわふわパンケーキ</h3><div class="price">980円</div><p class="desc">チョコソースをたっぷりかけて。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="sweets">
+  <div class="photo"><span class="menu-no">04</span>
+    <img src="https://images.pexels.com/photos/17429506/pexels-photo-17429506.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/17429506/pexels-photo-17429506.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.04 ベリーのレアチーズケーキ　650円" alt="ベリーのレアチーズケーキ" loading="lazy"></div>
+  <div class="body"><h3>ベリーのレアチーズケーキ</h3><div class="price">650円</div><p class="desc">甘酸っぱいベリーソースが自慢。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="food">
+  <div class="photo"><span class="menu-no">05</span>
+    <img src="https://images.pexels.com/photos/1209029/pexels-photo-1209029.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/1209029/pexels-photo-1209029.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.05 季節野菜のサンドイッチ　880円" alt="季節野菜のサンドイッチ" loading="lazy"></div>
+  <div class="body"><h3>季節野菜のサンドイッチ</h3><div class="price">880円</div><p class="desc">自家製パンでつくるボリュームサンド。</p></div>
+</div></div>
+  </div>
+</section>
+<section id="access">
+  <div class="container">
+    <h2 class="section-title">店舗情報</h2>
+    <div class="shop-info">
+  <div>
+    <p><strong>営業状況</strong><span class="open-status" data-open="9:00-18:00" data-closed-days="2"></span></p>
+    <table><tr><th>住所</th><td>〇〇県〇〇市こもれび町1-2-3（架空）</td></tr><tr><th>営業時間</th><td>9:00〜18:00</td></tr><tr><th>定休日</th><td>火曜日</td></tr><tr><th>席数</th><td>20席（テラス席あり）</td></tr><tr><th>電話</th><td>000-000-0000</td></tr></table>
+  </div>
+  <div class="map-box"><iframe src="https://maps.google.com/maps?q=Tokyo%20Station&z=15&output=embed" loading="lazy" title="地図"></iframe></div>
+</div>
+  </div>
+</section>
+<section id="contact" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">ご予約・お問い合わせ</h2>
+    <p class="section-lead">お気軽にご連絡ください。</p>
+    <form class="contact-form">
+  <div><label for="name">お名前</label><input id="name" required placeholder="例）山田 太郎"></div>
+  <div><label for="tel">電話番号</label><input id="tel" type="tel" placeholder="例）090-0000-0000"></div>
+  <div><label for="kind">ご用件</label><select id="kind"><option>ご予約</option><option>貸切のご相談</option><option>その他</option></select></div>
+  <div><label for="msg">内容</label><textarea id="msg" rows="4" placeholder="ご希望の日時・人数など"></textarea></div>
+  <button class="btn" type="submit">送信する</button>
+</form>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav"><a href="index.html">トップ</a><a href="cafe.html">カフェ</a><a href="izakaya.html">居酒屋</a><a href="restaurant.html">レストラン</a><a href="features.html">できること</a></nav>
+    <p>※このサイトは制作サンプルです。掲載している店舗・メニュー・住所はすべて架空のものです。</p>
+    <p>写真：<a href="https://www.pexels.com/ja-jp/" target="_blank" rel="noopener">Pexels</a>（無料素材）</p>
+    <p>&copy; 2026 飲食店ホームページ制作サンプル</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
