@@ -56,8 +56,9 @@
 
     <div class="feature fade-in">
       <h3><span class="num">3</span>営業中かどうかを自動表示</h3>
-      <p>今の時刻と営業時間を比べて、自動で切り替わります（例：11:00〜20:00、水曜定休）。</p>
-      <div class="demo"><span class="open-status" data-open="11:00-20:00" data-closed-days="3"></span></div>
+      <p>今の時刻と営業時間を比べて、自動で切り替わります（例：11:00〜14:00／17:00〜21:00、水曜定休）。ランチとディナーの間の休憩時間にも対応できます。</p>
+      <div class="demo"><span class="open-status" data-open="11:00-14:00,17:00-21:00" data-closed-days="3"></span></div>
+      <p class="auto-note">※自動で表示できるのは、営業時間と定休日が決まっている場合だけです。臨時休業・祝日・不定休などは自動では判断できないため、お知らせ欄での案内や、お店側での手動切り替えと組み合わせます。</p>
     </div>
 
     <div class="feature fade-in">
@@ -91,8 +92,32 @@
     </div>
 
     <div class="feature fade-in">
-      <h3><span class="num">7</span>地図・お問い合わせフォーム</h3>
-      <p>Googleマップの埋め込みや、ご予約フォームを設置できます。各店舗ページの下部をご覧ください。</p>
+      <h3><span class="num">7</span>ご予約・お問い合わせフォーム</h3>
+      <p>お店に合わせて、次のどちらかの形で設置します。</p>
+      <div class="flow-box">
+        <strong>A. メールフォーム（このサンプルの形）</strong>
+        <ol class="flow">
+          <li>お客様がフォームに入力して送信</li>
+          <li>お店のメールアドレスに内容が届く</li>
+          <li>お客様のメールアドレスに「受付完了」の自動返信メールが届く</li>
+          <li>お店から確認の連絡をして予約確定</li>
+        </ol>
+      </div>
+      <div class="flow-box">
+        <strong>B. 予約サービスとの連携</strong>
+        <ol class="flow">
+          <li>「ネット予約」ボタンを押す</li>
+          <li>お店が使っている予約サービス（Googleフォームや各種予約サイトなど）のページへ移動</li>
+          <li>空き状況を見て、日時・人数を選んで予約</li>
+          <li>予約サービスから確認メールが届く</li>
+        </ol>
+      </div>
+      <div class="demo"><a class="btn" href="cafe.html#contact">フォームを試してみる</a></div>
+    </div>
+
+    <div class="feature fade-in">
+      <h3><span class="num">8</span>地図の埋め込み</h3>
+      <p>Googleマップを埋め込んで、お店の場所をそのまま確認できるようにします。</p>
       <div class="demo"><a class="btn" href="izakaya.html#access">居酒屋の店舗情報を見る</a></div>
     </div>
 
@@ -105,6 +130,11 @@
 <footer class="site-footer">
   <div class="container">
     <nav class="footer-nav"><a href="index.html">トップ</a><a href="cafe.html">カフェ</a><a href="izakaya.html">居酒屋</a><a href="restaurant.html">レストラン</a><a href="features.html">できること</a></nav>
+    <div class="footer-info">
+      <p>運営：株式会社〇〇〇〇（仮）｜〒000-0000 〇〇県〇〇市〇〇1-2-3（仮）｜TEL 000-000-0000</p>
+      <nav class="footer-legal"><a href="legal.html#privacy">プライバシーポリシー</a><a href="legal.html#tokushoho">特定商取引法に基づく表記</a></nav>
+      <p class="footer-small">※会社名・住所・各種表記は仮のものです。実際の制作では、お店の正式な情報に差し替えます。</p>
+    </div>
     <p>※このサイトは制作サンプルです。掲載している店舗・メニュー・住所はすべて架空のものです。</p>
     <p>写真：<a href="https://www.pexels.com/ja-jp/" target="_blank" rel="noopener">Pexels</a>（無料素材）</p>
     <p>&copy; 2026 飲食店ホームページ制作サンプル</p>
