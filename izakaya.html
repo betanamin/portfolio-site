@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>炭火酒場 灯｜居酒屋のサンプル</title>
+<meta name="description" content="居酒屋のホームページ制作サンプルです。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="izakaya">
+<header class="site-header">
+  <div class="container inner">
+    <a class="logo" href="index.html">炭火酒場 灯（あかり）</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav"><li><a href="index.html">トップ</a></li><li><a href="cafe.html">カフェ</a></li><li><a href="izakaya.html" aria-current="page">居酒屋</a></li><li><a href="restaurant.html">レストラン</a></li><li><a href="features.html">できること</a></li></ul>
+  </div>
+</header>
+<section class="hero" style="background-image:url('https://images.pexels.com/photos/11151168/pexels-photo-11151168.jpeg?auto=compress&cs=tinysrgb&w=1800')">
+  <div class="container">
+    <h1>炭火酒場 灯</h1>
+    <p>仕事帰りにふらっと。炭火で焼く焼き鳥と、季節の肴でおもてなしします。</p>
+    <a class="btn" href="#contact">ご予約はこちら</a>
+  </div>
+</section>
+<section id="menu">
+  <div class="container">
+    <h2 class="section-title">お品書き</h2>
+    <p class="section-lead">ジャンルを選ぶと絞り込めます。写真を押すと拡大します。</p>
+    <div class="filter" data-target="#iz-menu"><button class="active" data-cat="all">すべて</button><button data-cat="grill">焼き物</button><button data-cat="fish">お造り</button><button data-cat="side">一品</button><button data-cat="drink">飲み物</button></div>
+    <div class="menu-grid" id="iz-menu"><div class="menu-item fade-in" data-cat="grill">
+  <div class="photo"><span class="menu-no">01</span>
+    <img src="https://images.pexels.com/photos/13065193/pexels-photo-13065193.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/13065193/pexels-photo-13065193.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.01 炭火焼き鳥 盛り合わせ　1,280円" alt="炭火焼き鳥 盛り合わせ" loading="lazy"></div>
+  <div class="body"><h3>炭火焼き鳥 盛り合わせ</h3><div class="price">1,280円</div><p class="desc">備長炭でじっくり焼き上げた5本盛り。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="grill">
+  <div class="photo"><span class="menu-no">02</span>
+    <img src="https://images.pexels.com/photos/11151168/pexels-photo-11151168.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/11151168/pexels-photo-11151168.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.02 野菜串焼き　680円" alt="野菜串焼き" loading="lazy"></div>
+  <div class="body"><h3>野菜串焼き</h3><div class="price">680円</div><p class="desc">ピーマン・ねぎ・トマトの串焼き。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="fish">
+  <div class="photo"><span class="menu-no">03</span>
+    <img src="https://images.pexels.com/photos/28701114/pexels-photo-28701114.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/28701114/pexels-photo-28701114.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.03 鮮魚のお造り　1,580円" alt="鮮魚のお造り" loading="lazy"></div>
+  <div class="body"><h3>鮮魚のお造り</h3><div class="price">1,580円</div><p class="desc">その日に仕入れた鮮魚を3種盛りで。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="side">
+  <div class="photo"><span class="menu-no">04</span>
+    <img src="https://images.pexels.com/photos/35588675/pexels-photo-35588675.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/35588675/pexels-photo-35588675.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.04 鶏の唐揚げ　750円" alt="鶏の唐揚げ" loading="lazy"></div>
+  <div class="body"><h3>鶏の唐揚げ</h3><div class="price">750円</div><p class="desc">にんにく醤油に漬け込んだ人気No.1。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="side">
+  <div class="photo"><span class="menu-no">05</span>
+    <img src="https://images.pexels.com/photos/28460867/pexels-photo-28460867.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/28460867/pexels-photo-28460867.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.05 塩ゆで枝豆　380円" alt="塩ゆで枝豆" loading="lazy"></div>
+  <div class="body"><h3>塩ゆで枝豆</h3><div class="price">380円</div><p class="desc">まずはこれ。キンキンのビールと一緒に。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="drink">
+  <div class="photo"><span class="menu-no">06</span>
+    <img src="https://images.pexels.com/photos/29142300/pexels-photo-29142300.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/29142300/pexels-photo-29142300.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.06 生ビール　550円" alt="生ビール" loading="lazy"></div>
+  <div class="body"><h3>生ビール</h3><div class="price">550円</div><p class="desc">きめ細かい泡にこだわった一杯。</p></div>
+</div></div>
+  </div>
+</section>
+<section id="party" style="padding-top:0">
+  <div class="container">
+    <div class="info-box fade-in">
+      <strong>宴会コースのご案内</strong><br>
+      2時間飲み放題つき　4,000円〜（4名様から）。貸切は20名様までご相談いただけます。
+    </div>
+  </div>
+</section>
+<section id="access">
+  <div class="container">
+    <h2 class="section-title">店舗情報</h2>
+    <div class="shop-info">
+  <div>
+    <p><strong>営業状況</strong><span class="open-status" data-open="17:00-24:00" data-closed-days="0"></span></p>
+    <table><tr><th>住所</th><td>〇〇県〇〇市あかり横丁4-5-6（架空）</td></tr><tr><th>営業時間</th><td>17:00〜24:00</td></tr><tr><th>定休日</th><td>日曜日</td></tr><tr><th>席数</th><td>カウンター8席・座敷24席</td></tr><tr><th>電話</th><td>000-000-0000</td></tr></table>
+  </div>
+  <div class="map-box"><iframe src="https://maps.google.com/maps?q=Shinjuku%20Station&z=15&output=embed" loading="lazy" title="地図"></iframe></div>
+</div>
+  </div>
+</section>
+<section id="contact" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title">ご予約</h2>
+    <p class="section-lead">当日のご予約はお電話でお願いします。</p>
+    <form class="contact-form">
+  <div><label for="name">お名前</label><input id="name" required placeholder="例）山田 太郎"></div>
+  <div><label for="tel">電話番号</label><input id="tel" type="tel" placeholder="例）090-0000-0000"></div>
+  <div><label for="kind">ご用件</label><select id="kind"><option>ご予約</option><option>貸切のご相談</option><option>その他</option></select></div>
+  <div><label for="msg">内容</label><textarea id="msg" rows="4" placeholder="ご希望の日時・人数など"></textarea></div>
+  <button class="btn" type="submit">送信する</button>
+</form>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav"><a href="index.html">トップ</a><a href="cafe.html">カフェ</a><a href="izakaya.html">居酒屋</a><a href="restaurant.html">レストラン</a><a href="features.html">できること</a></nav>
+    <p>※このサイトは制作サンプルです。掲載している店舗・メニュー・住所はすべて架空のものです。</p>
+    <p>写真：<a href="https://www.pexels.com/ja-jp/" target="_blank" rel="noopener">Pexels</a>（無料素材）</p>
+    <p>&copy; 2026 飲食店ホームページ制作サンプル</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
