@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>できること一覧｜飲食店ホームページ制作サンプル</title>
+<meta name="description" content="ホームページに入れられる機能のサンプルです。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container inner">
+    <a class="logo" href="index.html">飲食店HP制作サンプル</a>
+    <button class="menu-btn" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav"><li><a href="index.html">トップ</a></li><li><a href="cafe.html">カフェ</a></li><li><a href="izakaya.html">居酒屋</a></li><li><a href="restaurant.html">レストラン</a></li><li><a href="features.html" aria-current="page">できること</a></li></ul>
+  </div>
+</header>
+<section>
+  <div class="container">
+    <h2 class="section-title">ホームページでできること</h2>
+    <p class="section-lead">実際に押したり動かしたりして、お試しください。</p>
+
+    <div class="feature fade-in">
+      <h3><span class="num">1</span>ページ間の移動</h3>
+      <p>上のメニュー（スマホでは右上の三本線）から、どのページにもすぐ移動できます。</p>
+      <div class="demo"><a class="btn" href="cafe.html">カフェ</a> <a class="btn" href="izakaya.html">居酒屋</a> <a class="btn" href="restaurant.html">レストラン</a> <a class="btn outline" href="index.html">トップへ</a></div>
+    </div>
+
+    <div class="feature fade-in">
+      <h3><span class="num">2</span>料理写真の拡大表示・番号つきメニュー</h3>
+      <p>写真を押すと大きく表示されます。左右の矢印で次の写真へ。料理には自動で番号がつきます。</p>
+      <div class="demo">
+        <div class="filter" data-target="#feat-menu"><button class="active" data-cat="all">すべて</button><button data-cat="drink">ドリンク</button><button data-cat="food">料理</button></div>
+        <div class="menu-grid" id="feat-menu"><div class="menu-item fade-in" data-cat="drink">
+  <div class="photo"><span class="menu-no">01</span>
+    <img src="https://images.pexels.com/photos/6205784/pexels-photo-6205784.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/6205784/pexels-photo-6205784.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.01 カフェラテ　580円" alt="カフェラテ" loading="lazy"></div>
+  <div class="body"><h3>カフェラテ</h3><div class="price">580円</div><p class="desc">番号つきで紹介できます。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="food">
+  <div class="photo"><span class="menu-no">02</span>
+    <img src="https://images.pexels.com/photos/13065193/pexels-photo-13065193.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/13065193/pexels-photo-13065193.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.02 焼き鳥盛り合わせ　1,280円" alt="焼き鳥盛り合わせ" loading="lazy"></div>
+  <div class="body"><h3>焼き鳥盛り合わせ</h3><div class="price">1,280円</div><p class="desc">写真を押すと拡大。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="food">
+  <div class="photo"><span class="menu-no">03</span>
+    <img src="https://images.pexels.com/photos/31094836/pexels-photo-31094836.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/31094836/pexels-photo-31094836.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.03 手打ちパスタ　1,600円" alt="手打ちパスタ" loading="lazy"></div>
+  <div class="body"><h3>手打ちパスタ</h3><div class="price">1,600円</div><p class="desc">矢印キーでも切り替え可能。</p></div>
+</div>
+<div class="menu-item fade-in" data-cat="drink">
+  <div class="photo"><span class="menu-no">04</span>
+    <img src="https://images.pexels.com/photos/29142300/pexels-photo-29142300.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop" data-zoom="https://images.pexels.com/photos/29142300/pexels-photo-29142300.jpeg?auto=compress&cs=tinysrgb&w=1400" data-caption="No.04 生ビール　550円" alt="生ビール" loading="lazy"></div>
+  <div class="body"><h3>生ビール</h3><div class="price">550円</div><p class="desc">カテゴリで絞り込み。</p></div>
+</div></div>
+      </div>
+    </div>
+
+    <div class="feature fade-in">
+      <h3><span class="num">3</span>営業中かどうかを自動表示</h3>
+      <p>今の時刻と営業時間を比べて、自動で切り替わります（例：11:00〜20:00、水曜定休）。</p>
+      <div class="demo"><span class="open-status" data-open="11:00-20:00" data-closed-days="3"></span></div>
+    </div>
+
+    <div class="feature fade-in">
+      <h3><span class="num">4</span>タブ切り替え（ランチ／ディナー）</h3>
+      <div class="demo" data-tabs>
+        <div class="tabs"><button class="active">ランチ</button><button>ディナー</button><button>ドリンク</button></div>
+        <div class="tab-panel active">日替わりランチ 1,000円／パスタランチ 1,200円（サラダ・ドリンクつき）</div>
+        <div class="tab-panel">ディナーコース 5,500円／アラカルト各種</div>
+        <div class="tab-panel">ソフトドリンク 400円〜／ワイン グラス 700円〜</div>
+      </div>
+    </div>
+
+    <div class="feature fade-in">
+      <h3><span class="num">5</span>写真のスライドショー</h3>
+      <div class="demo slider">
+        <img class="active" src="https://images.pexels.com/photos/18225475/pexels-photo-18225475.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="カフェの店内" loading="lazy">
+        <img src="https://images.pexels.com/photos/11151168/pexels-photo-11151168.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="焼き鳥" loading="lazy">
+        <img src="https://images.pexels.com/photos/32477661/pexels-photo-32477661.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="レストランの店内" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature fade-in">
+      <h3><span class="num">6</span>個数を選ぶと合計金額を計算</h3>
+      <p>テイクアウトの注文や、コースの人数計算などに使えます（例：お弁当 850円）。</p>
+      <div class="demo counter" data-price="850">
+        <button class="btn outline minus" aria-label="減らす">−</button>
+        <span class="qty">1</span>
+        <button class="btn outline plus" aria-label="増やす">＋</button>
+        <span class="total"></span>
+      </div>
+    </div>
+
+    <div class="feature fade-in">
+      <h3><span class="num">7</span>地図・お問い合わせフォーム</h3>
+      <p>Googleマップの埋め込みや、ご予約フォームを設置できます。各店舗ページの下部をご覧ください。</p>
+      <div class="demo"><a class="btn" href="izakaya.html#access">居酒屋の店舗情報を見る</a></div>
+    </div>
+
+    <div class="info-box fade-in">
+      <strong>そのほか</strong><br>
+      スマホ表示への自動対応、スクロールでふわっと表示、ページ右下の「↑」で先頭へ戻るボタンなども入っています。
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <nav class="footer-nav"><a href="index.html">トップ</a><a href="cafe.html">カフェ</a><a href="izakaya.html">居酒屋</a><a href="restaurant.html">レストラン</a><a href="features.html">できること</a></nav>
+    <p>※このサイトは制作サンプルです。掲載している店舗・メニュー・住所はすべて架空のものです。</p>
+    <p>写真：<a href="https://www.pexels.com/ja-jp/" target="_blank" rel="noopener">Pexels</a>（無料素材）</p>
+    <p>&copy; 2026 飲食店ホームページ制作サンプル</p>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
